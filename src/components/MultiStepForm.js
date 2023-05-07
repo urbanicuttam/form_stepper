@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, React } from "react";
 import { FormItem } from "./FormItem";
+import { Form, Row, Col } from "react-bootstrap";
 
 export const MultiStepForm = (props) => {
   // store index number with the answers?
@@ -24,13 +25,24 @@ export const MultiStepForm = (props) => {
 
   return (
     <div className="text-left">
-      {
-        props.list[props.step - 1].items?.map((item, index) => {
-          return (
-            <FormItem key={`${index}_${item.label}`} item={item} onChange={updateAnswers} answer={props.pagesAnswers[props.step] ? props.pagesAnswers[props.step][item.value] : null} />
-          )
-        })
-      }
-    </div>
+    <Form>
+      <Row>
+        {props.list[props.step - 1].items?.map((item, index) => (
+          <Col key={index} sm={6}>
+            <FormItem
+              key={`${index}_${item.label}`}
+              item={item}
+              onChange={updateAnswers}
+              answer={
+                props.pagesAnswers[props.step]
+                  ? props.pagesAnswers[props.step][item.value]
+                  : null
+              }
+            />
+          </Col>
+        ))}
+      </Row>
+    </Form>
+  </div>
   )
 }

@@ -41,3 +41,15 @@
 .text-left {
   text-align: left;
 }
+
+.card-header {
+  text-align: left;
+  background-color: #000 !important;
+  color: #ffffff;
+}
+
+.custom-button {
+  background-color: #F7901D !important;
+  border-color: #F7901D !important;
+  color: #ffffff !important;
+}

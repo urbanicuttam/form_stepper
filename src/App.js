@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { MultiStepProgressBar } from "./components/MultiStepProgressBar";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
@@ -26,6 +25,19 @@ function App() {
       // clear the form on submit
       setPagesAnswers({});
       setSubmitted(true);
+    }
+  }
+
+  function getHeadingForStep(step) {
+    switch (step) {
+      case 1:
+        return "Step 1 Heading";
+      case 2:
+        return "Step 2 Heading";
+      case 3:
+        return "Step 3 Heading";
+      default:
+        return "";
     }
   }
 
@@ -59,8 +71,10 @@ function App() {
                 <Button onClick={handleStart}>Start Over</Button>
               </Card.Footer>
             </Card> :
-          <Card>
-            <Card.Header>My Card Header</Card.Header>
+          <Card >
+          <Card.Header>
+            {getHeadingForStep(index)}
+          </Card.Header>
             <Card.Body>
               <MultiStepForm
                 list={questions}
@@ -70,8 +84,8 @@ function App() {
                 />
             </Card.Body>
             <Card.Footer className="d-flex justify-content-between">
-              <Button onClick={prevButton} disabled={index == 1}>Previous</Button>
-              <Button onClick={nextButton}>{index == totalPagesCount ? 'Submit' : 'Next'}</Button>
+              <Button className="custom-button" onClick={prevButton} disabled={index == 1}>Previous</Button>
+              <Button className="custom-button" onClick={nextButton}>{index == totalPagesCount ? 'Submit' : 'Next'}</Button>
             </Card.Footer>
           </Card>
         }

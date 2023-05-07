@@ -1,5 +1,6 @@
 import { Form } from "react-bootstrap";
 import { useState } from "react";
+import './FormItem.css'
 
 export const FormItem =  ({ item, onChange, answer })  => {
   const [currentValue, setCurrentValue] = useState(answer || null);
@@ -12,15 +13,16 @@ export const FormItem =  ({ item, onChange, answer })  => {
    switch (item.type) {
       case 'text':
         return (
-          <>
+          <div className="form-group">
             <Form.Label>{item.label}</Form.Label>
             <Form.Control
               type="text"
               id={item.label}
               onChange={(e) => handleChange(e.target.value, item.value)}
               value={currentValue}
-            />
-          </>
+              />
+          </div>
+          
         )
         break;
       // case 'password':
@@ -44,7 +46,7 @@ export const FormItem =  ({ item, onChange, answer })  => {
         )
       case 'select':
         return (
-          <div className="mt-2">
+          <div className="form-group">
             <Form.Label>{item.label}</Form.Label>
             <Form.Select aria-label={''} onChange={(e) => onChange(e.target.value, item.value)}>
               <option>{''}</option>
