@@ -63,7 +63,7 @@ function App() {
         <Row>
           {
             submitted ?
-            <Card>
+            <Card >
               <Card.Body>
                 <p>Your answers have been submitted!</p>
               </Card.Body>

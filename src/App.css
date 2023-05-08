@@ -46,10 +46,26 @@
   text-align: left;
   background-color: #000 !important;
   color: #ffffff;
+  width: 100% !important;
 }
 
 .custom-button {
   background-color: #F7901D !important;
   border-color: #F7901D !important;
   color: #ffffff !important;
+}
+
+/* Apply a border radius of 1rem to all Card components */
+.card {
+  border-radius: 1rem !important;
+}
+
+/* Apply a shadow effect to all Card components */
+.card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Increase the intensity of the shadow effect on hover */
+.card:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
