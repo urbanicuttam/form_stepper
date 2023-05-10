@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
-import ReviewForm from "./components/ReviewForm";
+import {ReviewForm} from "./components/ReviewForm";
 
 function App() {
   const [index, setIndex] = useState(1);
@@ -63,23 +63,24 @@ function App() {
           {submitted ? (
             <Card>
               <Card.Body>
-                <p>Your answers have been submitted!</p>
+              {index == totalPagesCount && (
+                  <ReviewForm
+                    list={questions}
+                    step={index}
+                    onPageUpdate={onPageAnswerUpdate}
+                    pagesAnswers={pagesAnswers}
+                  />
+                )}
+                <p>Please review your answers !</p>
               </Card.Body>
               <Card.Footer>
-                <Button onClick={handleStart}>Start Over</Button>
+                <Button className="custom-button" onClick={handleStart}>Start Over</Button>
               </Card.Footer>
             </Card>
           ) : (
             <Card>
               <Card.Header>{getHeadingForStep(index)}</Card.Header>
-              <Card.Body>
-                {index == totalPagesCount && (
-                  <ReviewForm
-                    list={questions}
-                    step={index}
-                    pagesAnswers={pagesAnswers}
-                  />
-                )}
+              <Card.Body> 
                 <MultiStepForm
                   list={questions}
                   step={index}
@@ -96,7 +97,7 @@ function App() {
                   Previous
                 </Button>
                 <Button className="custom-button" onClick={nextButton}>
-                  {index == totalPagesCount ? "Submit" : "Next"}
+                  {index == totalPagesCount ? "Finish" : "Next"}
                 </Button>
               </Card.Footer>
             </Card>

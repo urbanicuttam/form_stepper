@@ -3,28 +3,24 @@ export const questions = [
     section: 1,
     items: [
       {
-        index: 1,
         label: 'Data Source',
         type: 'select',
         value: 'datasource',
         options: [ 'Snowflake_demo', 'Snowflake_sdq']
       },
       {
-        index: 2,
         label: 'Data Base',
         type: 'select',
         value: 'database',
         options: [ 'demo1', 'demo2']
       },
       {
-        index: 3,
         label: 'Schema',
         type: 'select',
         value: 'database',
         options: [ 'schema1', 'schema2']
       },
       {
-        index: 4,
         label: 'Table',
         type: 'select',
         value: 'database',
@@ -57,8 +53,26 @@ export const questions = [
     section: 3,
     items: [
       {
-        label: 'If you are ready to submit please press `Submit`',
-        type: 'information'
+        label: 'Name',
+        type: 'text',
+        value: 'name'
+      },
+      {
+        label: 'Description',
+        type: 'text',
+        value: 'description'
+      },
+      ,
+      {
+        label: 'Class',
+        type: 'text',
+        value: 'class'
+      },
+      {
+        label: 'Project Name',
+        type: 'select',
+        value: 'pname',
+        options: [ 'State 1', 'State 2']
       }
     ]
   }

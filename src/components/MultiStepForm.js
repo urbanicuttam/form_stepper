@@ -23,8 +23,8 @@ export const MultiStepForm = (props) => {
     setAnswers({ ...answers, [category]: value });
 
   };
-  console.log(props.step)
-  console.log(props.pagesAnswers);
+  console.log("step",props.step)
+  console.log("page answers",props.pagesAnswers);
 
   return (
     <div className="text-left">
