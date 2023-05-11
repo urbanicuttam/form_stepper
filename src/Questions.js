@@ -53,8 +53,26 @@ export const questions = [
     section: 3,
     items: [
       {
-        label: 'If you are ready to submit please press `Submit`',
-        type: 'information'
+        label: 'Name',
+        type: 'text',
+        value: 'name'
+      },
+      {
+        label: 'Description',
+        type: 'text',
+        value: 'description'
+      },
+      ,
+      {
+        label: 'Class',
+        type: 'text',
+        value: 'class'
+      },
+      {
+        label: 'Project Name',
+        type: 'select',
+        value: 'pname',
+        options: [ 'State 1', 'State 2']
       }
     ]
   }
