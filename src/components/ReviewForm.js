@@ -31,9 +31,11 @@
 // export default ReviewForm;
 
 
+
 import { useState, useEffect, React } from "react";
 import { FormItem } from "./FormItem";
 import { Form, Row, Col, Card, Button } from "react-bootstrap";
+import { FaEdit } from "react-icons/fa";
 
 export const ReviewForm = (props) => {
   const [answers, setAnswers] = useState({ index: props.step });
@@ -51,11 +53,29 @@ export const ReviewForm = (props) => {
     setAnswers({ ...answers, [category]: value });
   };
 
+  const [readOnlyStates, setReadOnlyStates] = useState({});
+  
+  const toggleReadOnlyState = (sectionIndex) => {
+    setReadOnlyStates({
+      ...readOnlyStates,
+      [sectionIndex]: !readOnlyStates[sectionIndex],
+    });
+  };
+
   return (
     <div className="text-left">
       {props.list.map((section, index) => (
         <Card key={index} className="mb-3">
           <Card.Header>Section {section.section}</Card.Header>
+          <Button
+            style={{ position: "absolute", top: "0", right: "0" }}
+            variant="link"
+            className="text-secondary"
+            onClick={() => toggleReadOnlyState(index)}
+          >
+            <FaEdit />
+            {/* {readOnlyStates[index] ? "Edit" : "Edit"} */}
+          </Button>
           <Card.Body>
             <Form>
               <Row>
@@ -69,7 +89,8 @@ export const ReviewForm = (props) => {
                           ? props.pagesAnswers[section.section][item.value]
                           : null
                       }
-                    />
+                      isReadOnly={!readOnlyStates[index]}
+                    ></FormItem>
                   </Col>
                 ))}
               </Row>
@@ -77,9 +98,9 @@ export const ReviewForm = (props) => {
           </Card.Body>
         </Card>
       ))}
-      <Button className="custom-button" onClick={props.onSubmit}>Submit</Button>
+      <Button className="custom-button" onClick={props.onSubmit}>
+        Submit
+      </Button>
     </div>
   );
 };
-
-

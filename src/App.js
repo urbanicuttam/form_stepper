@@ -97,7 +97,7 @@ function App() {
                   Previous
                 </Button>
                 <Button className="custom-button" onClick={nextButton}>
-                  {index == totalPagesCount ? "Finish" : "Next"}
+                  {index == totalPagesCount ? "Review & Submit" : "Next"}
                 </Button>
               </Card.Footer>
             </Card>
