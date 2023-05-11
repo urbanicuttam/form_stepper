@@ -159,6 +159,27 @@ export const questions = [
     ],
   },
   {
+    section: 8,
+    items: [
+      {
+        label: "Street Address",
+        type: "text",
+        value: "street",
+      },
+      {
+        label: "City",
+        type: "text",
+        value: "city",
+      },
+      {
+        label: "State",
+        type: "select",
+        value: "state",
+        options: ["State 1", "State 2"],
+      },
+    ],
+  },
+  {
     section: 9,
     items: [
       {

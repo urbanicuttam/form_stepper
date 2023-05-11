@@ -50,7 +50,7 @@ const Combined = () => {
       case 9:
         return "Step 9 Heading";
       case 10:
-        return "Step  Heading";
+        return "Step 10 Heading";
       default:
         return "";
     }
