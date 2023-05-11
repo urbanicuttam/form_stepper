@@ -20,7 +20,7 @@ const Combined = () => {
   };
 
   const nextButton = () => {
-    if (index - 3) {
+    if (index - 10) {
       setIndex((prevIndex) => prevIndex + 1);
     } else {
       // clear the form on submit
@@ -37,6 +37,20 @@ const Combined = () => {
         return "Step 2 Heading";
       case 3:
         return "Step 3 Heading";
+      case 4:
+        return "Step 4 Heading";
+      case 5:
+        return "Step 5 Heading";
+      case 6:
+        return "Step 6 Heading";
+      case 7:
+        return "Step 7 Heading";
+      case 8:
+        return "Step 8 Heading";
+      case 9:
+        return "Step 9 Heading";
+      case 10:
+        return "Step  Heading";
       default:
         return "";
     }
