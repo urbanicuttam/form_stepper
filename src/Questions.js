@@ -3,77 +3,115 @@ export const questions = [
     section: 1,
     items: [
       {
-        label: 'Data Source',
-        type: 'select',
-        value: 'datasource',
-        options: [ 'Snowflake_demo', 'Snowflake_sdq']
+        label: "Data Source Type",
+        type: "select",
+        value: "datasource",
+        options: ["RDBMS", "FILE"],
+      },
+      {},
+      {
+        label: "Data Source Connection",
+        type: "select",
+        value: "database",
+        options: ["demo1", "demo2"],
       },
       {
-        label: 'Data Base',
-        type: 'select',
-        value: 'database',
-        options: [ 'demo1', 'demo2']
+        label: "Create Data Source Connection",
+        type: "text",
+        value: "database",
       },
       {
-        label: 'Schema',
-        type: 'select',
-        value: 'database',
-        options: [ 'schema1', 'schema2']
+        label: "Data Target Connection ",
+        type: "select",
+        value: "database",
+        options: ["target1", "target2"],
       },
       {
-        label: 'Table',
-        type: 'select',
-        value: 'database',
-        options: [ 'table1', 'table2']
-      }
-    ]
+        label: "Create Data Source Connection",
+        type: "text",
+        value: "database",
+      },
+      {
+        label: "Application",
+        type: "select",
+        value: "database",
+        options: ["app1", "app2"],
+      },
+      {
+        label: "Create Application",
+        type: "text",
+        value: "database",
+      },
+    ],
   },
   {
     section: 2,
     items: [
       {
-        label: 'Street Address',
-        type: 'text',
-        value: 'street'
+        label: "Source Type",
+        type: "select",
+        value: "database",
+        options: ["Query", "Table"],
+      },
+      {},
+      {
+        label: "Query",
+        type: "text",
+        value: "",
+      },
+      {},
+      {
+        label: "Database Name",
+        type: "text",
+        value: "",
       },
       {
-        label: 'City',
-        type: 'text',
-        value: 'city'
+        label: "Schema Name",
+        type: "text",
+        value: "",
       },
       {
-        label: 'State',
-        type: 'select',
-        value: 'state',
-        options: [ 'State 1', 'State 2']
-      }
-    ]
+        label: "Table Name",
+        type: "text",
+        value: "",
+      },
+      {
+        label: "Bucket Name",
+        type: "text",
+        value: "",
+      },
+      {
+        label: "Full File Name",
+        type: "text",
+        value: "",
+      },
+    ],
   },
   {
     section: 3,
     items: [
       {
-        label: 'Name',
-        type: 'text',
-        value: 'name'
+        label: "Name",
+        type: "text",
+        value: "name",
       },
       {
-        label: 'Description',
-        type: 'text',
-        value: 'description'
+        label: "Description",
+        type: "text",
+        value: "description",
       },
       ,
       {
-        label: 'Class',
-        type: 'text',
-        value: 'class'
+        label: "Class",
+        type: "text",
+        value: "class",
       },
       {
-        label: 'Project Name',
-        type: 'select',
-        value: 'pname',
-        options: [ 'State 1', 'State 2']
-      }
-    ]
-  }
-]
+        label: "Project Name",
+        type: "select",
+        value: "pname",
+        options: ["State 1", "State 2"],
+      },
+    ],
+  },
+];

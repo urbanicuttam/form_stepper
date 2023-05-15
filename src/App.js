@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
-import {ReviewForm} from "./components/ReviewForm";
+import { ReviewForm } from "./components/ReviewForm";
 
 function App() {
   const [index, setIndex] = useState(1);
@@ -32,9 +32,9 @@ function App() {
   function getHeadingForStep(step) {
     switch (step) {
       case 1:
-        return "Step 1 Heading";
+        return "Source Entity Selection";
       case 2:
-        return "Step 2 Heading";
+        return "Target Schema and Transformation Logic";
       case 3:
         return "Step 3 Heading";
       default:
@@ -63,7 +63,7 @@ function App() {
           {submitted ? (
             <Card>
               <Card.Body>
-              {index == totalPagesCount && (
+                {index == totalPagesCount && (
                   <ReviewForm
                     list={questions}
                     step={index}
@@ -74,13 +74,15 @@ function App() {
                 <p>Please review your answers !</p>
               </Card.Body>
               <Card.Footer>
-                <Button className="custom-button" onClick={handleStart}>Start Over</Button>
+                <Button className="custom-button" onClick={handleStart}>
+                  Start Over
+                </Button>
               </Card.Footer>
             </Card>
           ) : (
             <Card>
               <Card.Header>{getHeadingForStep(index)}</Card.Header>
-              <Card.Body> 
+              <Card.Body>
                 <MultiStepForm
                   list={questions}
                   step={index}
