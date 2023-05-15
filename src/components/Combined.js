@@ -32,9 +32,9 @@ const Combined = () => {
   function getHeadingForStep(step) {
     switch (step) {
       case 1:
-        return "Step 1 Heading";
+        return "Source Entity Selection";
       case 2:
-        return "Step 2 Heading";
+        return "Target Schema and Transformation Logic";
       case 3:
         return "Step 3 Heading";
       case 4:
