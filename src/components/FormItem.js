@@ -1,6 +1,9 @@
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useState } from "react";
 import "./FormItem.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export const FormItem = ({ item, onChange, answer, isReadOnly }) => {
   const [currentValue, setCurrentValue] = useState(answer || null);
@@ -62,8 +65,10 @@ export const FormItem = ({ item, onChange, answer, isReadOnly }) => {
       return (
         <div className="form-group">
           <Form.Label>{item.label}</Form.Label>
-          <br></br>
-          <Button className="plus-button"></Button>
+          <div className="plus-button">
+            <FontAwesomeIcon icon={faPlus} />
+            <span>Add</span>
+          </div>
         </div>
       );
 
