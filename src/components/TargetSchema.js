@@ -2,7 +2,7 @@ import { Table, Form, Input } from "react-bootstrap";
 import TableData from "./TableData";
 
 
-const headers = Object.keys(TableData); 
+const headers = ["", ...Object.keys(TableData)]; 
 
 const ThData = () => {
     return headers.map((name)=>{
@@ -14,12 +14,13 @@ export const TargetSchema = () => {
   return (
     <Table responsive>
       <thead>
-        <tr>
-            {ThData()}
-        </tr>
+        <tr>{ThData()}</tr>
       </thead>
       <tbody>
-        {/* <tr>
+        <tr>
+          <td>
+            <Form.Check></Form.Check>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -36,11 +37,11 @@ export const TargetSchema = () => {
           <td>
             <Form.Check></Form.Check>
           </td>
-          
+
           <td>
             <Form.Control></Form.Control>
           </td>
-        </tr> */}
+        </tr>
         {/* <tr>
           <td>2</td>
           {Array.from({ length: 6 }).map((_, index) => (

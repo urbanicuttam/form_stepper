@@ -55,6 +55,15 @@ export const ReviewForm = (props) => {
   const [isReadOnly, setIsReadOnly] = useState(true);
   console.log(props.pagesAnswers)
 
+   const [readOnlyStates, setReadOnlyStates] = useState({});
+
+   const toggleReadOnlyState = (sectionIndex) => {
+     setReadOnlyStates({
+       ...readOnlyStates,
+       [sectionIndex]: !readOnlyStates[sectionIndex],
+     });
+   };
+
   return (
     <div className="text-left">
       {props.list.map((section, index) => (
@@ -64,7 +73,8 @@ export const ReviewForm = (props) => {
             style={{ position: "absolute", top: "0", right: "0" }}
             variant="link"
             className="text-secondary"
-            onClick={() => setIsReadOnly((prev) => !prev)}
+            onClick={() => toggleReadOnlyState(index)}
+            // onClick={() => setIsReadOnly((prev) => !prev)}
           >
             <FaEdit />
             {/* {isReadOnly ? "Edit" : "Edit"} */}
@@ -82,7 +92,8 @@ export const ReviewForm = (props) => {
                           ? props.pagesAnswers[section.section][item.value]
                           : null
                       }
-                      isReadOnly={isReadOnly}
+                      isReadOnly={!readOnlyStates[index]}
+                      // isReadOnly={isReadOnly}
                     ></FormItem>
                   </Col>
                 ))}
