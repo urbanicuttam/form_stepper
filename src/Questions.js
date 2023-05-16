@@ -17,7 +17,7 @@ export const questions = [
       },
       {
         label: "Create Data Source Connection",
-        type: "text",
+        type: "add",
         value: "database",
       },
       {
@@ -27,8 +27,8 @@ export const questions = [
         options: ["target1", "target2"],
       },
       {
-        label: "Create Data Source Connection",
-        type: "text",
+        label: "Create Data Target Connection",
+        type: "add",
         value: "database",
       },
       {
@@ -39,7 +39,7 @@ export const questions = [
       },
       {
         label: "Create Application",
-        type: "text",
+        type: "add",
         value: "database",
       },
     ],

@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import "./FormItem.css";
 
@@ -55,6 +55,15 @@ export const FormItem = ({ item, onChange, answer, isReadOnly }) => {
               return <option value={opt}>{opt}</option>;
             })}
           </Form.Select>
+        </div>
+      );
+      break;
+    case "add":
+      return (
+        <div className="form-group">
+          <Form.Label>{item.label}</Form.Label>
+          <br></br>
+          <Button className="plus-button"></Button>
         </div>
       );
 
