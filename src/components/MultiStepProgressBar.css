@@ -1,4 +1,7 @@
-.step {
+@import "rsuite/dist/rsuite.css";
+
+#root{ padding: 10px; }
+/* .step {
   color: white;
   width: 20px;
   height: 20px;
@@ -12,4 +15,4 @@
 
 .step.completed {
   background-color: #F7901D;
-}
+} */

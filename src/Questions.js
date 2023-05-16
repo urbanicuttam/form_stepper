@@ -17,13 +17,13 @@ export const questions = [
       {
         label: 'Schema',
         type: 'select',
-        value: 'database',
+        value: 'schema',
         options: [ 'schema1', 'schema2']
       },
       {
         label: 'Table',
         type: 'select',
-        value: 'database',
+        value: 'table',
         options: [ 'table1', 'table2']
       }
     ]

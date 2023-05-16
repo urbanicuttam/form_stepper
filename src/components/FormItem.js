@@ -2,8 +2,10 @@ import { Form } from "react-bootstrap";
 import { useState } from "react";
 import './FormItem.css'
 
-export const FormItem =  ({ item, onChange, answer })  => {
+export const FormItem =  ({ item, onChange, answer, isReadOnly })  => {
   const [currentValue, setCurrentValue] = useState(answer || null);
+
+  console.log(answer)
 
   const handleChange = (value) => {
     setCurrentValue(value);
@@ -20,6 +22,7 @@ export const FormItem =  ({ item, onChange, answer })  => {
               id={item.label}
               onChange={(e) => handleChange(e.target.value, item.value)}
               value={currentValue}
+              disabled={isReadOnly}
               />
           </div>
           
@@ -34,9 +37,10 @@ export const FormItem =  ({ item, onChange, answer })  => {
               id="inputPassword5"
               aria-describedby="passwordHelpBlock"
               onChange={(e) => onChange(e.target.value, item.value)}
+              disabled={isReadOnly}
             />
           </>
-        )
+        );
         break;
       case 'information':
         return (
@@ -48,18 +52,19 @@ export const FormItem =  ({ item, onChange, answer })  => {
         return (
           <div className="form-group">
             <Form.Label>{item.label}</Form.Label>
-            <Form.Select aria-label={''} onChange={(e) => onChange(e.target.value, item.value)}>
-              <option>{''}</option>
-              {
-                item.options.map((opt, index) => {
-                  return (
-                    <option value={opt}>{opt}</option>
-                  )
-                })
-              }
+            <Form.Select
+              aria-label={""}
+              onChange={(e) => onChange(e.target.value, item.value)}
+              disabled={isReadOnly}
+              value={currentValue}
+            >
+              <option>{""}</option>
+              {item.options.map((opt, index) => {
+                return <option value={opt}>{opt}</option>;
+              })}
             </Form.Select>
           </div>
-        )
+        );
 
       return (
         <></>

@@ -26,6 +26,7 @@ export const MultiStepForm = (props) => {
   console.log("step",props.step)
   console.log("page answers",props.pagesAnswers);
 
+console.log(props.pagesAnswers);
   return (
     <div className="text-left">
       <Form>
