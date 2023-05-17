@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
 import { ReviewForm } from "./components/ReviewForm";
+import Page1 from "./components/Pages/Page1";
+import TargetLoadDetails from "./components/Pages/TargetLoadDetails";
 
 function App() {
   const [index, setIndex] = useState(1);
@@ -66,60 +68,64 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Container className="h-100">
-        <Row className="m-5">
-          <Col className="align-self-center">
-            <MultiStepProgressBar step={index} />
-          </Col>
-        </Row>
-        <Row>
-          {submitted ? (
-            <Card>
-              <Card.Body>
-                {index == totalPagesCount && (
-                  <ReviewForm
+    <div>
+      <div className="App">
+        <Container className="h-100">
+          <Row className="m-5">
+            <Col className="align-self-center">
+              <MultiStepProgressBar step={index} />
+            </Col>
+          </Row>
+          <Row>
+            {submitted ? (
+              <Card>
+                <Card.Body>
+                  {index == totalPagesCount && (
+                    <ReviewForm
+                      list={questions}
+                      step={index}
+                      onPageUpdate={onPageAnswerUpdate}
+                      pagesAnswers={pagesAnswers}
+                    />
+                  )}
+                  <p>Please review your answers !</p>
+                </Card.Body>
+                <Card.Footer>
+                  <Button className="custom-button" onClick={handleStart}>
+                    Start Over
+                  </Button>
+                </Card.Footer>
+              </Card>
+            ) : (
+              <Card>
+                <Card.Header>{getHeadingForStep(index)}</Card.Header>
+                <Card.Body>
+                  <MultiStepForm
                     list={questions}
                     step={index}
                     onPageUpdate={onPageAnswerUpdate}
                     pagesAnswers={pagesAnswers}
                   />
-                )}
-                <p>Please review your answers !</p>
-              </Card.Body>
-              <Card.Footer>
-                <Button className="custom-button" onClick={handleStart}>
-                  Start Over
-                </Button>
-              </Card.Footer>
-            </Card>
-          ) : (
-            <Card>
-              <Card.Header>{getHeadingForStep(index)}</Card.Header>
-              <Card.Body>
-                <MultiStepForm
-                  list={questions}
-                  step={index}
-                  onPageUpdate={onPageAnswerUpdate}
-                  pagesAnswers={pagesAnswers}
-                />
-              </Card.Body>
-              <Card.Footer className="d-flex justify-content-between">
-                <Button
-                  className="custom-button"
-                  onClick={prevButton}
-                  disabled={index == 1}
-                >
-                  Previous
-                </Button>
-                <Button className="custom-button" onClick={nextButton}>
-                  {index == totalPagesCount ? "Review & Submit" : "Next"}
-                </Button>
-              </Card.Footer>
-            </Card>
-          )}
-        </Row>
-      </Container>
+                </Card.Body>
+                <Card.Footer className="d-flex justify-content-between">
+                  <Button
+                    className="custom-button"
+                    onClick={prevButton}
+                    disabled={index == 1}
+                  >
+                    Previous
+                  </Button>
+                  <Button className="custom-button" onClick={nextButton}>
+                    {index == totalPagesCount ? "Review & Submit" : "Next"}
+                  </Button>
+                </Card.Footer>
+              </Card>
+            )}
+          </Row>
+        </Container>
+      </div>
+      <Page1></Page1>
+      <TargetLoadDetails></TargetLoadDetails>
     </div>
   );
 }

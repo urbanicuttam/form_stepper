@@ -1,0 +1,71 @@
+.page1 {
+  text-align: center;
+  height: 100vh;
+}
+
+.page1-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.page1-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.page1-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.card-header {
+  text-align: left;
+  background-color: #000 !important;
+  color: #ffffff;
+  width: 100% !important;
+}
+
+.custom-button {
+  background-color: #f7901d !important;
+  border-color: #f7901d !important;
+  color: #ffffff !important;
+}
+
+/* Apply a border radius of 1rem to all Card components */
+.card {
+  border-radius: 1rem !important;
+}
+
+/* Apply a shadow effect to all Card components */
+.card {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Increase the intensity of the shadow effect on hover */
+.card:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
