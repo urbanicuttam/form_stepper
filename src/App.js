@@ -6,6 +6,7 @@ import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
 import { ReviewForm } from "./components/ReviewForm";
 import { TargetSchema } from "./components/TargetSchema";
+import { DataValidation } from "./components/DataValidation";
 
 function App() {
   const [index, setIndex] = useState(1);
@@ -37,7 +38,7 @@ function App() {
     setIsReview(true);
     setSubmitted(true);
   };
-  console.log(isReview);
+  console.log(index);
 
   console.log(pagesAnswers);
   function getHeadingForStep(step) {
@@ -47,7 +48,7 @@ function App() {
       case 2:
         return "Address";
       case 3:
-        return "Profile";
+        return "Define Data Validation";
       default:
         return "";
     }
@@ -128,7 +129,7 @@ function App() {
           </Col>
         </Row>
       </Container>
-      <TargetSchema></TargetSchema>
+      <DataValidation></DataValidation>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect, React } from "react";
 import { FormItem } from "./FormItem";
 import { Form, Row, Col } from "react-bootstrap";
+import { TargetSchema } from "./TargetSchema";
+import { DataValidation } from "./DataValidation";
 
 export const MultiStepForm = (props) => {
   // store index number with the answers?
@@ -21,32 +23,39 @@ export const MultiStepForm = (props) => {
   console.log(answers);
   const updateAnswers = (value, category) => {
     setAnswers({ ...answers, [category]: value });
-
   };
-  console.log("step",props.step)
-  console.log("page answers",props.pagesAnswers);
+  console.log("step", props.step);
+  console.log("page answers", props.pagesAnswers);
 
-console.log(props.pagesAnswers);
+  console.log(props.pagesAnswers);
   return (
-    <div className="text-left">
-      <Form>
-        <Row>
-          {props.list[props.step - 1].items?.map((item, index) => (
-            <Col key={index} sm={6}>
-              <FormItem
-                key={`${index}_${item.label}`}
-                item={item}
-                onChange={updateAnswers}
-                answer={
-                  props.pagesAnswers[props.step]
-                    ? props.pagesAnswers[props.step][item.value]
-                    : null
-                }
-              />
-            </Col>
-          ))}
-        </Row>
-      </Form>
+    <div>
+      <div className="text-left">
+        <Form>
+          <Row>
+            {props.step == 3 ? (
+              <Col>
+                <DataValidation></DataValidation>
+              </Col>
+            ) : (
+              props.list[props.step - 1].items?.map((item, index) => (
+                <Col key={index} sm={6}>
+                  <FormItem
+                    key={`${index}_${item.label}`}
+                    item={item}
+                    onChange={updateAnswers}
+                    answer={
+                      props.pagesAnswers[props.step]
+                        ? props.pagesAnswers[props.step][item.value]
+                        : null
+                    }
+                  />
+                </Col>
+              ))
+            )}
+          </Row>
+        </Form>
+      </div>
     </div>
   );
 };
