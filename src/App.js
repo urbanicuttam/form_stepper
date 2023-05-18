@@ -6,6 +6,7 @@ import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
 import { ReviewForm } from "./components/ReviewForm";
 
+import CreateDataConnections from "./components/Pages/CreateDataConnections";
 import SourceEntitySelection from "./components/Pages/SourceEntitySelection";
 import TargetLoadDetails from "./components/Pages/TargetLoadDetails";
 
@@ -35,9 +36,9 @@ function App() {
   function getHeadingForStep(step) {
     switch (step) {
       case 1:
-        return "Source Entity Selection";
+        return "Create Data Connections";
       case 2:
-        return "Target Schema and Transformation Logic";
+        return "Source Entity Selection";
       case 3:
         return "Step 3 Heading";
       case 4:
@@ -125,6 +126,7 @@ function App() {
           </Row>
         </Container>
       </div>
+      <CreateDataConnections></CreateDataConnections>
       <SourceEntitySelection></SourceEntitySelection>
       <TargetLoadDetails></TargetLoadDetails>
     </div>

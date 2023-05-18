@@ -1,9 +1,6 @@
 import React from "react";
 import { Container, Form, Row, Col, Card, Button } from "react-bootstrap";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
 import "./SourceEntitySelection.css";
 
 const SourceEntitySelection = () => {
@@ -17,79 +14,81 @@ const SourceEntitySelection = () => {
               <div className="text-left">
                 <Form>
                   <Row className="mb-3">
-                    {/* <Col sm={6}> */}
-                    <div className="form-group dst">
-                      <Form.Label>Data Source Type</Form.Label>
-                      <Form.Select aria-label="" disabled={false}>
-                        <option>{""}</option>
-                        <option value={"RDBMS"}>RDBMS</option>
-                        <option value={"FILE"}>FILE</option>
-                      </Form.Select>
+                    <Col sm={6}>
+                      <div className="form-group">
+                        <Form.Label>Source Type</Form.Label>
+                        <Form.Select aria-label="" disabled={false}>
+                          <option>{""}</option>
+                          <option value={"Query"}>Query</option>
+                          <option value={"Table"}>Table</option>
+                        </Form.Select>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className="mb-3">
+                    <div>
+                      <Form.Label>Query</Form.Label>
+                      <Form.Control
+                        type="text"
+                        className="textbox1"
+                        disabled={false}
+                      />
                     </div>
                   </Row>
                   <Row className="mb-3">
                     <Col>
-                      <div>
-                        <Form.Label>Data Source Connection</Form.Label>
-                        <Form.Select>
-                          <option>{""}</option>
-                          <option>dsc1</option>
-                          <option>dsc2</option>
-                        </Form.Select>
+                      <div className="form-group">
+                        <Form.Label>Database Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="textbox1"
+                          disabled={false}
+                        />
                       </div>
                     </Col>
                     <Col>
                       <div className="form-group">
-                        <Form.Label>Create Data Source Connection</Form.Label>
-                        <div className="plus-button">
-                          <FontAwesomeIcon icon={faPlus} />
-                          <span>Create Data Source Connection</span>
-                        </div>
+                        <Form.Label>Schema Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="textbox1"
+                          disabled={false}
+                        />
+                      </div>
+                    </Col>
+                    <Col>
+                      <div className="form-group">
+                        <Form.Label>Table Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="textbox1"
+                          disabled={false}
+                        />
                       </div>
                     </Col>
                   </Row>
-                  <Row className="mb-3">
+                  <Row>
                     <Col>
-                      <div>
-                        <Form.Label>Data Target Connection</Form.Label>
-                        <Form.Select>
-                          <option>{""}</option>
-                          <option>dtc1</option>
-                          <option>dtc2</option>
-                        </Form.Select>
+                      <div className="form-group">
+                        <Form.Label>Bucket Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="textbox1"
+                          disabled={false}
+                        />
                       </div>
                     </Col>
                     <Col>
                       <div className="form-group">
-                        <Form.Label>Create Data Target Connection</Form.Label>
-                        <div className="plus-button">
-                          <FontAwesomeIcon icon={faPlus} />
-                          <span>Create Data Target Connection</span>
-                        </div>
+                        <Form.Label>Full File Name</Form.Label>
+                        <Form.Control
+                          type="text"
+                          className="textbox1"
+                          disabled={false}
+                        />
                       </div>
                     </Col>
-                  </Row>
-                  <Row className="mb-3">
-                    <Col>
-                      <div>
-                        <Form.Label>Application</Form.Label>
-                        <Form.Select>
-                          <option>{""}</option>
-                          <option>Application1</option>
-                          <option>Application2</option>
-                        </Form.Select>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div className="form-group">
-                        <Form.Label>Create Application</Form.Label>
-                        <div className="plus-button">
-                          <FontAwesomeIcon icon={faPlus} />
-                          <span>Create Application</span>
-                        </div>
-                      </div>
-                    </Col>
-                    {/* </Col> */}
+                    <Col></Col>
                   </Row>
                 </Form>
               </div>
