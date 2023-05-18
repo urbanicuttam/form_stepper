@@ -67,7 +67,7 @@ export const FormItem = ({ item, onChange, answer, isReadOnly }) => {
           <Form.Label>{item.label}</Form.Label>
           <div className="plus-button">
             <FontAwesomeIcon icon={faPlus} />
-            <span>Add</span>
+            <span>{item.label}</span>
           </div>
         </div>
       );

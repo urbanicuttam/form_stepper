@@ -3,11 +3,14 @@
 }
 
 .TargetLoadDetails .textbox1 {
-  width: 530px;
+  max-width: 375px;
 }
 
 .TargetLoadDetails .textbox2 {
   width: 200px;
+}
+.TargetLoadDetails .textbox3 {
+  max-width: 320px;
 }
 /* .TargetLoadDetails .textbox {
   margin-left: 400px;
@@ -22,4 +25,7 @@
 .TargetLoadDetails .toggle-button {
   height: auto;
   margin-left: 55px;
+}
+.dqt {
+  margin-left: 74px;
 }

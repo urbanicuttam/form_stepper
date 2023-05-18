@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { MultiStepForm } from "./components/MultiStepForm";
 import { questions } from "./Questions";
 import { ReviewForm } from "./components/ReviewForm";
-import Page1 from "./components/Pages/Page1";
+
+import SourceEntitySelection from "./components/Pages/SourceEntitySelection";
 import TargetLoadDetails from "./components/Pages/TargetLoadDetails";
 
 function App() {
@@ -124,7 +125,7 @@ function App() {
           </Row>
         </Container>
       </div>
-      <Page1></Page1>
+      <SourceEntitySelection></SourceEntitySelection>
       <TargetLoadDetails></TargetLoadDetails>
     </div>
   );

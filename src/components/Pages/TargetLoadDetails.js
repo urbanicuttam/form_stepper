@@ -23,53 +23,70 @@ const TargetLoadDetails = () => {
               <div className="text-left">
                 <Form>
                   <Row>
-                    {/* <Col sm={7}> */}
                     <div className="form-group">
-                      <Form.Label>Target Entity Name</Form.Label>
-                      <Form.Control
-                        type="text"
-                        className="textbox1"
-                        disabled={false}
-                      />
+                      <Row className="align-items-center mb-3">
+                        <Col xs="auto">
+                          <Form.Label>Target Entity Name</Form.Label>
+                        </Col>
+                        <Col>
+                          <Form.Control
+                            type="text"
+                            className="textbox1"
+                            disabled={false}
+                          />
+                        </Col>
+                      </Row>
                     </div>
 
                     <div className="form-group">
-                      <Form.Label>Target Load Type</Form.Label>
-                      <Form.Check
-                        type="radio"
-                        label="TRUNCATE"
-                        name="TargetLoadDetails"
-                      ></Form.Check>
-                      <Form.Check
-                        type="radio"
-                        label="INSERT"
-                        name="TargetLoadDetails"
-                      ></Form.Check>
-                      <Form.Check
-                        type="radio"
-                        label="INCREMENTAL"
-                        name="TargetLoadDetails"
-                      ></Form.Check>
-                      <Form.Check
-                        type="radio"
-                        label="SCD TYPE II"
-                        name="TargetLoadDetails"
-                      ></Form.Check>
+                      <Row className="align-items-center mb-3">
+                        <Col xs="auto">
+                          <Form.Label>Target Load Type</Form.Label>
+                        </Col>
+                        <Col xs="auto">
+                          <Form.Check
+                            type="radio"
+                            label="TRUNCATE"
+                            name="TargetLoadDetails"
+                          ></Form.Check>
+                        </Col>
+                        <Col xs="auto">
+                          <Form.Check
+                            type="radio"
+                            label="INSERT"
+                            name="TargetLoadDetails"
+                          ></Form.Check>
+                        </Col>
+                        <Col xs="auto">
+                          <Form.Check
+                            type="radio"
+                            label="INCREMENTAL"
+                            name="TargetLoadDetails"
+                          ></Form.Check>
+                        </Col>
+                        <Col xs="auto">
+                          <Form.Check
+                            type="radio"
+                            label="SCD TYPE II"
+                            name="TargetLoadDetails"
+                          ></Form.Check>
+                        </Col>
+                      </Row>
                     </div>
-                    {/* </Col> */}
+
                     <div className="form-group">
                       <Row className="mb-3">
-                        <Col>
+                        <Col xs="auto">
                           <Form.Label>Data Quality Moniter</Form.Label>
                         </Col>
-                        <Col>
+                        <Col className="dqt" xs="auto">
                           <Form.Label>Alert</Form.Label>
                           <Form.Control
                             type="text"
                             className="textbox2"
                           ></Form.Control>
                         </Col>
-                        <Col>
+                        <Col xs="auto">
                           <Form.Label>Abort</Form.Label>
                           <Form.Control
                             type="text"
@@ -80,17 +97,17 @@ const TargetLoadDetails = () => {
                     </div>
                     <div className="form-group">
                       <Row className="mb-3">
-                        <Col>
+                        <Col xs="auto">
                           <Form.Label>Record Count Changes Moniter</Form.Label>
                         </Col>
-                        <Col>
+                        <Col xs="auto">
                           <Form.Label>Alert</Form.Label>
                           <Form.Control
                             type="text"
                             className="textbox2"
                           ></Form.Control>
                         </Col>
-                        <Col>
+                        <Col xs="auto">
                           <Form.Label>Abort</Form.Label>
                           <Form.Control
                             type="text"
@@ -99,12 +116,12 @@ const TargetLoadDetails = () => {
                         </Col>
                       </Row>
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                       <Form.Label>PHI/PII Identifier Status</Form.Label>
                     </div>
                     <br></br>
-                    <br></br>
-                    <div className="form-group">
+                    <br></br> */}
+                    {/* <div className="form-group">
                       <Form.Label>Target Load Details</Form.Label>
                       <ToggleButtonGroup
                         type="toggle"
@@ -116,7 +133,7 @@ const TargetLoadDetails = () => {
                       </ToggleButtonGroup>
                     </div>
                     <br></br>
-                    <br></br>
+                    <br></br> */}
                     <div className="form-group">
                       <Form.Check
                         type="checkbox"
@@ -126,7 +143,7 @@ const TargetLoadDetails = () => {
                     <br></br>
                     <br></br>
                     <div className="form-group">
-                      <Row>
+                      <Row className="mb-3">
                         <Col>
                           <Form.Label>Data Lake Connection</Form.Label>
                           <Form.Select aria-label="" disabled={false}>
@@ -147,13 +164,20 @@ const TargetLoadDetails = () => {
                         </Col>
                       </Row>
                     </div>
+
                     <div className="form-group">
-                      <Form.Label>Data Lake Target Template</Form.Label>
-                      <Form.Control
-                        type="text"
-                        className="textbox1"
-                        disabled={false}
-                      />
+                      <Row className="align-items-center mb-3">
+                        <Col xs="auto">
+                          <Form.Label>Data Lake Target Template</Form.Label>
+                        </Col>
+                        <Col>
+                          <Form.Control
+                            type="text"
+                            className="textbox3"
+                            disabled={false}
+                          />
+                        </Col>
+                      </Row>
                     </div>
                   </Row>
                 </Form>
